@@ -52,19 +52,3 @@ function clearForm() {
     document.getElementById('product-price').value = '';
     document.getElementById('product-quantity').value = '';
 }
-
-async function generatePDF() {
-    const { jsPDF } = window.jspdf;
-    const doc = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: [80, 297]
-    });
-
-    doc.setFontSize(18);
-    doc.text('Resumen de Compra', 14, 22);
-
-    let y = 30;
-    doc.setFontSize(12);
-    cart.forEach((product, index) => {
-        doc.text
