@@ -20,6 +20,19 @@
         }
     </style>
 </head>
+<script>
+    window.addEventListener('message', function(event) {
+        var product = event.data;
+        if (product && product.name && product.detail && product.price && product.quantity) {
+            addProductToCart(product);
+        }
+    });
+
+    function addProductToCart(product) {
+        cart.push(product);
+        updateCart();
+    }
+</script>
 <body>
     <div class="container">
         <div id="shopping-cart-container" class="section-container">
