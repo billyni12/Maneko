@@ -65,7 +65,18 @@ h1, h2 {
 .cart {
     margin-top: 20px;
 }
+.cart button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.cart button:hover {
+    background-color: #218838;
+}
 table {
     width: 100%;
     border-collapse: collapse;
