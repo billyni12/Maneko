@@ -19,19 +19,19 @@ body {
     //max-width: 800px;
 }
 /* Estilos para el contenedor del iframe */
-.iframe-container {
+/*.iframe-container {
     margin: 20px auto;
     max-width: 90%;
     width: 100%;
     overflow: hidden;
-}
+}*/
 
 /* Asegura que el iframe ocupe el 100% del contenedor */
-.iframe-container iframe {
+/*.iframe-container iframe {
     width: 100%;
     height: 100%;
     border: none;
-}
+}*/
 
 .section-container {
     background-color: #fff;
