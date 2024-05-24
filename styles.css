@@ -6,7 +6,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 280vh;
+    min-height: 100vh;
 }
 
 .container {
