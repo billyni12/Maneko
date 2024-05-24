@@ -11,12 +11,26 @@ body {
 
 .container {
     background-color: #fff;
+    //padding: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    //max-width: 800px;
+}
+
+.section-container {
+    background-color: #fff;
+    //padding: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 800px;
+    margin: 0 auto;
 }
+
+
 
 h1, h2 {
     text-align: center;
