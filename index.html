@@ -5,34 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- STEP 1: Integración del script de Awesome Table -->
-    <script src="https://app.awesome-table.com/AwesomeTableInclude.js"></script>
     <style>
-        /* Estilo adicional para los contenedores */
-        .section-container {
+        /* Estilos para el contenedor del iframe */
+        .iframe-container {
             margin: 20px auto;
             max-width: 90%;
             width: 100%;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
 
-        .awesome-table-container {
-            margin-top: 20px;
-            overflow-x: auto; /* Para manejar tablas grandes */
-        }
-
-        .awesome-table-container div[data-type="AwesomeTableView"] {
-            max-width: 100%;
-            margin: 0 auto;
+        .iframe-container iframe {
+            width: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="section-container">
+        <div id="shopping-cart-container" class="section-container">
             <h1>Carrito de Compras</h1>
             <div class="product-form">
                 <input type="text" id="product-name" placeholder="Nombre del Producto">
@@ -63,9 +53,9 @@
                 <button onclick="generateOrder()">Generar Orden de Compra</button>
             </div>
         </div>
-        <div class="section-container awesome-table-container">
-            <!-- STEP 2: Integración de Awesome Table dentro de un layout -->
-            <div data-type="AwesomeTableView" data-filters="" data-viewID="-NxeHzuZcPfJipDx0d1-"></div>
+        <!-- Contenedor para el iframe -->
+        <div class="iframe-container">
+            <iframe referrerpolicy="no-referrer-when-downgrade" height="600px" width="100%" src="https://view-awesome-table.com/-NxeHzuZcPfJipDx0d1-/view"></iframe>
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
