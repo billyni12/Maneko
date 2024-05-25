@@ -11,31 +11,14 @@ body {
 
 .container {
     background-color: #fff;
-    //padding: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 95%;
-    //max-width: 800px;
 }
-/* Estilos para el contenedor del iframe */
-/*.iframe-container {
-    margin: 20px auto;
-    max-width: 90%;
-    width: 100%;
-    overflow: hidden;
-}*/
-
-/* Asegura que el iframe ocupe el 100% del contenedor */
-/*.iframe-container iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}*/
 
 .section-container {
     background-color: #fff;
-    //padding: 20px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -44,41 +27,27 @@ body {
     margin: 0 auto;
 }
 
-
-
 h1, h2 {
     text-align: center;
 }
 
-.product-form {
+.client-form {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 }
 
-.product-form input {
-    width: 18%;
+.client-form input {
+    width: 30%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.product-form button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.product-form button:hover {
-    background-color: #218838;
-}
-
 .cart {
     margin-top: 20px;
 }
+
 .cart button {
     padding: 10px 20px;
     background-color: #28a745;
@@ -91,6 +60,7 @@ h1, h2 {
 .cart button:hover {
     background-color: #218838;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
