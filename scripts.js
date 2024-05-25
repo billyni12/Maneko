@@ -11,22 +11,6 @@ function getFormattedDate() {
     return `${year}${month}${day}${hours}${minutes}${seconds}`;
 }
 
-function addToCart() {
-    const name = document.getElementById('product-name').value;
-    const detail = document.getElementById('product-detail').value;
-    const price = parseFloat(document.getElementById('product-price').value);
-    const quantity = parseInt(document.getElementById('product-quantity').value);
-
-    if (name && detail && price && quantity) {
-        const product = { name, detail, price, quantity };
-        cart.push(product);
-        updateCart();
-        clearForm();
-    } else {
-        alert('Por favor, complete todos los campos.');
-    }
-}
-
 function updateCart() {
     const cartTableBody = document.querySelector('#cart-table tbody');
     cartTableBody.innerHTML = '';
@@ -57,13 +41,6 @@ function removeFromCart(index) {
     updateCart();
 }
 
-function clearForm() {
-    document.getElementById('product-name').value = '';
-    document.getElementById('product-detail').value = '';
-    document.getElementById('product-price').value = '';
-    document.getElementById('product-quantity').value = '';
-}
-
 function generateOrder() {
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({
@@ -72,16 +49,28 @@ function generateOrder() {
         format: [80, 297]
     });
 
+    const clientName = document.getElementById('client-name').value;
+    const clientId = document.getElementById('client-id').value;
+    const clientPhone = document.getElementById('client-phone').value;
+
+    if (!clientName || !clientId || !clientPhone) {
+        alert('Por favor, complete los datos del cliente.');
+        return;
+    }
+
     doc.setFontSize(12);
     doc.text(`Importadora Maneko`, 20, 5);
     doc.setFontSize(10);
-    doc.text(`Orden de Compra  ${getFormattedDate()}`, 5, 12);
+    doc.text(`Orden de Compra ${getFormattedDate()}`, 5, 12);
+    doc.text(`Cliente: ${clientName}`, 5, 18);
+    doc.text(`DNI: ${clientId}`, 5, 24);
+    doc.text(`Celular: ${clientPhone}`, 5, 30);
 
-    let y = 20;
+    let y = 40;
     doc.setFontSize(10);
     cart.forEach((product, index) => {
         doc.text(`${index + 1}. ${product.name} - ${product.detail}`, 5, y);
-        doc.text(`S/.${product.price.toFixed(2)} x ${product.quantity} = S/.${(product.price * product.quantity).toFixed(2)}`, 35, y +4);
+        doc.text(`S/.${product.price.toFixed(2)} x ${product.quantity} = S/.${(product.price * product.quantity).toFixed(2)}`, 35, y + 4);
         y += 9;
     });
 
