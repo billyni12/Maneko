@@ -89,3 +89,15 @@ function generateOrder() {
     const fileName = `orden_de_compra_${getFormattedDate()}.pdf`;
     doc.save(fileName);
 }
+// Función para manejar el evento message y agregar el producto al carrito
+window.addEventListener('message', function(event) {
+    var product = event.data;
+    if (product && product.name && product.detail && product.price && product.quantity) {
+        addProductToCart(product);
+    }
+});
+
+function addProductToCart(product) {
+    cart.push(product);
+    updateCart();
+}
